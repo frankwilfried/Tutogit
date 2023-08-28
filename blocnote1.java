@@ -1,4 +1,3 @@
-
 package blocnote;
 import java.util.ArrayList;
 import java.io.FileWriter;
@@ -9,19 +8,28 @@ import java.util.Scanner ;
 public class blocnote1 {
 
 	ArrayList<String> bloc =new ArrayList<String>();
+	int taille =bloc.size()-1;
  //pour cree un blocs note
 public static void nouvbloc() {
 
 	ArrayList<String> bloc =new ArrayList<String>();
 	Scanner sc= new Scanner(System.in);
-	System.out.println("veuillez entrer vos notes ");
-	String note= sc.nextLine();
-
+	System.out.println("veuillez entrer vos notes et entrer la touche # pour terminer  ");
+String note;
+note= sc.nextLine();
+do {
+		note= sc.nextLine();
 	bloc.add(note);
-
-	System.out.println(bloc);
 	}
-//pour ajouter de nouvelles notes
+while( !note.equals("#"));
+bloc.remove("#");
+	System.out.println("voici vos notes "+bloc);
+
+	}
+
+
+
+/*pour ajouter de nouvelles notes
 public  void ecriredenouveau  ()	 {
 
 	Scanner sc= new Scanner(System.in);
@@ -32,7 +40,7 @@ public  void ecriredenouveau  ()	 {
 				+ "veuillez saisir 1 pour continuer");
 		String A= sc.nextLine ();
 		}
-	while (A.contains("1")) ;
+	while (A.equals("#")) ;
 		System.out.println("Saisir de nouvelles note ");
 	String nouvnote= sc.nextLine();
 
@@ -40,7 +48,7 @@ public  void ecriredenouveau  ()	 {
 
 		System.out.println(bloc);
 		 }
-
+	     */
 
 
 public  void ecrirefichier() {
@@ -66,3 +74,4 @@ public static void main(String[] args) {
  nz.ecrirefichier();
 }
 }
+
